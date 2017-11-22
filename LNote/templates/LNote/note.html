@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Note</title>
+	{% load staticfiles %}
+</head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+<script src="{% static 'js/jquery.tmpl.min.js' %}"></script>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="{%static 'css/noteStyle.css' %}" type="text/css">
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  		crossorigin="anonymous">
+</script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="{% static 'js/noteScript.js' %}" type="text/javascript"></script>
+<script src="{% static 'js/csrf.js' %}" type="text/javascript"></script>
+<body id="notebody">
+	<div class="ajax_container">
+		<div class="note_right">
+			<div class="all_notes_section">
+				<div class="all_notes_section_header">
+					<div class="back">
+						<a href="http://127.0.0.1:8000/LiveNote/Home/"><i class="fa fa-arrow-left" style="font-size:32px"></i></a>
+					</div>
+					<div class="addNote">
+
+						<a href="#add_popup2"><i class="fa fa-plus-circle" style="font-size:32px"></i></a>
+					</div>
+					<div class="note_matter" ><p id="notename">Shared Notes</p>
+					</div>
+					<div class="date"><p id="date"></p><p id="time"></p>
+					</div>
+				</div>
+				<div class="all_notes_scrollbar" id="all_notes_style-1">
+					<div class="list_of_all_notes_section">
+					</div>
+				  	<div class="all_notes_force-overflow"></div>
+				</div>
+
+			</div>
+			<div class="selected_note_setion" id="note_section">
+					<div class="note_content_section_body">
+						<div class="note_content_section_header">
+							<div class="header_note_name"><h2 id="note_header_name"></h2></div>
+							<div class="header_note_sharedBy"><p></p></div>
+							<div class="header_note_date"><p></p></div>
+							<div class="header_note_time"><p></p></div>
+						</div>
+						<div class="selected_note_scrollbar" id="selected_note_style-1">
+							<div class="note_content_matter" data-placeholder="Type something..." contenteditable="true">
+							</div>
+						  	<div class="selected_note_force-overflow"></div>
+						</div>
+
+					</div>
+					<div class="note_tools">
+						<div class="w3-padding w3-large w3-text-black">
+							<div class="sharetool">
+								<a href="#share_popup2"><i class="fa fa-external-link"></i></a>
+								<span class="sharetool_text">Share Note</span>
+							</div>
+							<div class="deltool">
+								<a href="#popup2"><i class="fa fa-trash" id='close'></i></a>
+								<span class="deltool_text">Delete Note</span>
+							</div>
+							<div class="savetool">
+								<i class="fa fa-window-restore" id="save" style="cursor:pointer;"></i>
+								<span class="savetool_text">save Note</span>
+							</div>
+						</div>
+					</div>
+			</div>
+		</div>
+	</div>
+	<div id="popup2" class="deloverlay2">
+		<div class="delpopup2">
+			<h2></h2>
+			<a class="close2" href="#">&times;</a>
+			<a class="close12" href="#"><button class="del_note">Delete</button></a>
+		</div>
+	</div>
+	<div id="share_popup2" class="share_deloverlay2">
+		<div class="sharepopup2">
+			<a class="share_close2" href="#">&times;</a>
+			<div class="popupContent">
+				<div class="form">
+					<h1>Select User To Share</h1>
+					<form class="login-form">
+						<select class="database_users">
+						</select>
+						<a href="#"><label class="share_note_btn">Share</label></a>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="add_popup2" class="add_deloverlay2">
+		<div class="addpopup2">
+			<a class="add_close2" href="#">&times;</a>
+			<div class="popupContent">
+				<div class="form">
+					<h1>Create New Note</h1>
+					<form class="login-form">
+						 <input type="text" id="note_name" name="note_name" placeholder="Name"/>
+						<!-- <input type="text" name="tag" placeholder="Notebook Tag"/> -->
+						<a href="#"><label class="add_note_btn">Add</label></a>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

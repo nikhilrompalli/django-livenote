@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Note Boook</title>
+    {% load staticfiles %}
+</head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+<script src="{% static 'js/jquery.tmpl.min.js' %}"></script>
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css?family=Timmana" rel="stylesheet">
+<link rel="stylesheet" href="{%static 'css/style.css' %}" type="text/css">
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  		crossorigin="anonymous">
+</script>
+<script src="{% static 'js/jquery.cookie.min.js' %}" type="text/javascript"></script>
+<script src="{% static 'js/script.js' %}" type="text/javascript"></script>
+<script src="{% static 'js/csrf.js' %}" type="text/javascript"></script>
+<body>
+	<div class="container">
+		<div class="left">
+			<div class="leftside_user_details_and_logo">
+				<div class="leftside_logo">
+					<img class="logo" src="{% static 'img/logo2.png' %}">
+				</div>
+				<div class="leftside_user_details">
+					<div class="user_outer">
+						<center><p id="username">{{ request.user.username }}</p></center>
+					</div>
+					<div class="logout">
+						<img class="logout_logo" src="{% static 'img/logout1.png' %}">
+					</div>
+				</div>
+			</div>
+			<div class="left_scrollbar" id="left_style-1">
+				<div class="leftside_myNotebooks_details">
+				</div>
+			  	<div class="left_force-overflow"></div>
+			</div>
+
+		</div>
+		<div class="right">
+			<div class="right_myNotebook">
+				<div class="search_and_create">
+					<div class="search"><center><h1>NoteBooks</h1></center>
+					</div>
+					<div class="create_project">
+							<div class="popup" >
+							    <input type="checkbox"
+							           value = ""
+							           id="testButton"
+							           class="popupBtn-input"/>
+
+							      <label for="testButton"
+							             class="popupBtn-label"
+							             id="myButton">
+							        <div class="popupBtn" >
+							        	<img class="addBtn" src="{% static 'img/add.png' %}">
+							        </div>
+							      </label>
+
+
+							    <div class="popupContainer">
+							      <label for="testButton"
+							             class="popupBtn-close">
+							        <div class="hover-popup">
+							          <div class="hover-popup-content">
+							            close!
+							          </div>
+							        </div>
+							        X
+							      </label>
+							      <div class="popupContent">
+									  <div class="form">
+									  <h1>New Notebook</h1>
+									    <form class="login-form">
+									      <input type="text" name="notebook_name" placeholder="Name"/>
+									      <input type="text" name="tag" placeholder="Notebook Tag"/>
+									      <label class="create_project_btn">Create</label>
+									    </form>
+									  </div>
+							      </div>
+							    </div>
+							    <div class="blackout"></div>
+							</div>
+					</div>
+
+
+				</div>
+				<div class="middel_scrollbar" id="middel_style-1">
+					<div class="myNotebooks_container">
+					</div>
+					<div class="middel_force-overflow"></div>
+				</div>
+			</div>
+			<div class="right_sharedNotebook">
+				<div class="sharedNotebook_header"><center><h3>Shared Notes</h3></center>
+				</div>
+				<div class="share_scrollbar" id="share_style-1">
+					<div class="sharedNotebook_container">
+					</div>
+					<div class="share_force-overflow"></div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<div id="popup1" class="deloverlay">
+		<div class="delpopup">
+			<h2>Are you sure</h2>
+			<a class="close1" href="#">&times;</a>
+			<a href="#"><button class="del_notebook">Delete</button></a>
+		</div>
+	</div>
+
+</body>
+</html>

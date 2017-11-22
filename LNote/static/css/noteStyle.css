@@ -1,0 +1,615 @@
+#notebody{
+	height: 100%;
+	width:85%;
+	margin-left: 0%;
+	margin-top:0%;
+	margin-bottom: 0%;
+	margin-right: 0%;
+}
+.ajax_container{
+	height: 100%;
+	width: 100%;
+}
+.note_right{
+  width: 100%;
+  height: 100%;
+  float: right;
+}
+.all_notes_section{
+  width: 30%;
+  height: 100%;
+  background-color: rgba(120,130,140,.13);
+  float: left;
+
+}
+.all_notes_section_header{
+  width: 100%;
+  height: 8.8%;
+  background-color: #f3b7c2;
+}
+.list_of_all_notes_section{
+  height: 100%;
+  width: 100%;
+  background-color: #f9e7e7;
+}
+.selected_note_setion{
+  width: 70%;
+  height: 100%;
+  float: right;
+}
+.note_content_section_body{
+  width: 93%;
+  height: 100%;
+  background-color: white;
+  float: left;
+}
+.note_content_section_header{
+  width: 99.8%;
+  height: 25%;
+  background-color: white;
+  border-left: 1px solid rgba(120,130,140,.13);
+
+}
+.header_note_name{
+    width:100%;
+    height:30%;
+    margin-top: -3%;
+    padding-top:4%;
+}
+.header_note_sharedBy{
+    width:100%;
+    height:20%;
+    margin-top: -3%;
+    padding-top:6%;
+}
+.h2{margin-top:0px;}
+.header_note_date{
+    width:100%;
+    height:25%;
+    margin-top: -3%;
+    padding-top:6%;
+    font-family: 'Timmana', sans-serif;
+}
+.header_note_time{
+    width:100%;
+    height:25%;
+    margin-top: -3%;
+    padding-top:7%;
+    font-family: 'Timmana', sans-serif;
+}
+.note_content_matter{
+  width: 99.7%;
+  height: %;
+  padding: 6%;
+  background-color: white;
+   border-left: 1px solid rgba(120,130,140,.13);
+   font-family: medium-content-serif-font,Georgia,Cambria,"Times New Roman",Times,serif;
+   font-size:20px;
+}
+.note_tools{
+  width: 7%;
+  height: 100%;
+  background-color: white;
+  float: right;
+}
+p,h3,h1,h2,#added_note_name{
+    font-family: medium-content-sans-serif-font,"Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif;
+}
+.single_note_in_all_Notelist div p{
+  color: white;
+}
+.single_note_in_all_Notelist p{
+    padding-left:8%;
+}
+.single_note_in_all_Notelist .time{
+    padding-left:80%;
+}
+.single_note_in_all_Notelist .title{
+    padding-left:8%;
+    margin-top:-12%;
+    font-size:20px;
+}
+.single_note_in_all_Notelist{
+  position: relative;
+  float: left;
+  margin-left: 0%;
+  background-color: #f9e7e7;
+  border-top: 1px solid rgba(120,130,140,.13);
+  height: 20%;
+  width: 100%;
+}
+#notename{
+    margin-top:-3%;
+}
+.single_note_in_all_Notelist .date_time{
+  float: right;
+}
+.single_note_in_all_Notelist:hover {
+    cursor:pointer;
+    background-color: #ff8c8c;
+}
+.single_note_in_all_Notelist.change_color_on_click{
+  background-color: green;
+  border-left: 6px solid #d065ea;
+  background-color: #f2bef3;
+}
+.status_div{
+	width:50%;
+	margin-left:20%;
+}
+.status{
+	border-radius: 500px;
+	background-color: #22b66e;
+	color: white;
+	width:45%;
+	font-size:10px;
+}
+.status:focus{
+	outline: 0px solid transparent;
+}
+
+.status_div { display:none; }
+.single_note_in_all_Notelist:hover .status_div { display:block; }
+
+[contenteditable]:focus {
+    outline: 0px solid transparent;
+}
+[contenteditable]:empty:before {
+    content: attr(data-placeholder);
+    color: grey;
+    display: inline-block;
+}
+.w3-padding {
+    padding: 80px 16px!important;
+}
+
+.w3-large {
+    font-size: 30px!important;
+}
+.sharetool, .deltool,.back_icon {
+    position: relative;
+    display: inline-block;
+}
+
+.sharetool .sharetool_text, .deltool .deltool_text, .addNote .addtool_text {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    font-size: 13px;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    top: -5px;
+    right: 110%;
+}
+.sharetool .sharetool_text::after,.deltool .deltool_text::after, .addNote .addtool_text {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent transparent black;
+}
+.sharetool:hover .sharetool_text, .deltool:hover .deltool_text, .addNote:hover .addtool_text {
+    visibility: visible;
+}
+
+.edittool, .savetool, {
+    position: relative;
+    display: inline-block;
+}
+
+.edittool .edittool_text, .savetool .savetool_text{
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    font-size: 13px;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    top: -5px;
+    right: 110%;
+}
+.edittool .edittool_text::after,.savetool .savetool_text::after{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent transparent black;
+}
+.edittool:hover .edittool_text, .savetool:hover .savetool_text{
+    visibility: visible;
+}
+
+.header_left{
+  height: 100%;
+  width: 60%;
+  float: left;
+}
+.header_right{
+  height: 100%;
+  width: 40%;
+  float: right;
+}
+.header_right p{
+  font-size: 15px;
+  margin:0%;
+}
+
+.book_icon{
+  padding-top: 5px;
+}
+.tag_icon{
+  padding-top: 5px;
+  padding-left: 40px;
+
+}
+.sharedby_icon{
+  height: 50%;
+  width: 100%
+}
+.calendar_icon{
+  height: 50%;
+  width: 100%
+}
+.back{
+  height: 100%;
+  width: 10%;
+  float: left;
+  padding-top:3%;
+  cursor: pointer;
+}
+.addNote{
+  height: 100%;
+  width: 10%;
+  float: left;
+  cursor: pointer;
+}
+.addNote i{
+  padding-top: 10px;
+  padding-left: 15px;
+}
+.note_matter{
+  height: 100%;
+  width: 60%;
+  padding-left:7%;
+  padding-top:8%;
+  float: left;
+  font-size:20px;
+  font-family: medium-content-sans-serif-font,"Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif;
+}
+.date{
+  height: 100%;
+  width: 20%;
+  float: left;
+  font-size: 10px;
+}
+/*for all notes scroll bar*/
+    .all_notes_scrollbar
+    {
+      float: left;
+      height: 91.2%;
+      width: 99.8%;
+      background: #fff8f8;
+      overflow-y: auto;
+    }
+
+    .all_notes_force-overflow
+    {
+      min-height:0%;
+    }
+    #all_notes_style-1::-webkit-scrollbar-track
+    {
+      -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+      border-radius: 10px;
+      background-color: #fff8f8;
+    }
+
+    #all_notes_style-1::-webkit-scrollbar
+    {
+      width: 12px;
+      background-color: #fff8f8;
+    }
+
+    #all_notes_style-1::-webkit-scrollbar-thumb
+    {
+      border-radius: 10px;
+      -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+      background-color: #ffebeb;
+    }
+/*end of all notes scrool bar*/
+
+/*for selected note scroll bar*/
+    .selected_note_scrollbar
+    {
+      float: left;
+      height: 77%;
+      width: 100%;
+      background: white;
+      overflow-y: auto;
+    }
+
+    .selected_note_force-overflow
+    {
+      min-height:0%;
+    }
+    #selected_note_style-1::-webkit-scrollbar-track
+    {
+      -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+      border-radius: 10px;
+      background-color: whitesmoke;
+    }
+
+    #selected_note_style-1::-webkit-scrollbar
+    {
+      width: 12px;
+      background-color: whitesmoke;
+    }
+
+    #selected_note_style-1::-webkit-scrollbar-thumb
+    {
+      border-radius: 10px;
+      -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+      background-color: #eeeeee;
+    }
+/*end of seleted note scrool bar*/
+
+/*popup delete*/
+.box {
+  width: 40%;
+  margin: 0 auto;
+  background: rgba(255,255,255,0.2);
+  padding: 35px;
+  border: 2px solid #fff;
+  border-radius: 20px/50px;
+  background-clip: padding-box;
+  text-align: center;
+}
+
+
+.deloverlay2 {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  visibility: hidden;
+  opacity: 0;
+}
+.deloverlay2:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.delpopup2 {
+  margin: 20% ;
+  margin-left: 35%;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  width: 30%;
+  position: relative;
+  transition: all 5s ease-in-out;
+}
+
+.delpopup2 h2 {
+  margin-top: 0;
+  color: #333;
+  font-family: Tahoma, Arial, sans-serif;
+}
+.delpopup2 .close2 {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+.delpopup2 .close2:hover {
+  color: #06D85F;
+}
+.delpopup2 .content {
+  max-height: 30%;
+  overflow: auto;
+}
+
+/*@media screen and (max-width: 700px){
+  .box{
+    width: 70%;
+  }
+  .popup{
+    width: 70%;
+  }
+}*/
+
+
+/*end of delete popoup*/
+
+
+/*share popup*/
+
+.share_deloverlay2 {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  visibility: hidden;
+  opacity: 0;
+}
+.share_deloverlay2:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.sharepopup2 {
+  margin: 20% ;
+  margin-left: 35%;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  width: 30%;
+  position: relative;
+  transition: all 5s ease-in-out;
+}
+
+.sharepopup2 h2 {
+  margin-top: 0;
+  color: #333;
+  font-family: Tahoma, Arial, sans-serif;
+}
+.sharepopup2 .share_close2 {
+  top: 20px;
+  right: 30px;
+  padding-left: 95%;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+.sharepopup2 .share_close2:hover {
+  color: #06D85F;
+}
+.sharepopup2 .content {
+  max-height: 30%;
+  overflow: auto;
+}
+
+/*@media screen and (max-width: 700px){
+  .box{
+    width: 70%;
+  }
+  .popup{
+    width: 70%;
+  }
+}*/
+
+
+/*end of delete popoup*/
+
+
+
+/*share content*/
+.popupContent {
+  position: relative;
+  z-index: 1;
+  background: #FFFFFF;
+  max-width: 100%;
+  margin: 0 auto 100px;
+  text-align: center;
+}
+.popupContent input,.popupContent textarea,.popupContent select,option  {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+.create_project_btn,.add_note_btn,.share_note_btn {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #4CAF50;
+  width: 100%;
+  border: 0;
+  padding: 3% 45% 3% 44%;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+.create_project_btn:hover,.create_project_btn:active,.create_project_btn:focus {
+  background: #43A047;
+}
+.add_note_btn:hover,.add_note_btn:active,.add_note_btn:focus {
+  background: #43A047;
+}
+.share_note_btn:hover,.share_note_btn:active,.share_note_btn:focus {
+  background: #43A047;
+}
+.create_project_btn:active ~ .popupContainer,.add_note_btn:active ~ .popupContainer,.share_note_btn:active ~ .popupContainer {
+  pointer-events:none;
+  opacity:0;
+  top:55%;
+  transition:width .2s,
+    height .2s,
+    opacity .2s,
+    top .2s,
+    display 0s linear .5s;
+  -webkit-transition-delay: .0s;
+  transition-delay: .0s;
+}
+
+/*end of share content*/
+
+
+/*add note*/
+.add_deloverlay2 {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  visibility: hidden;
+  opacity: 0;
+}
+.add_deloverlay2:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.addpopup2 {
+  margin: 20% ;
+  margin-left: 35%;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  width: 30%;
+  position: relative;
+  transition: all 5s ease-in-out;
+}
+
+.addpopup2 h2 {
+  margin-top: 0;
+  color: #333;
+  font-family: Tahoma, Arial, sans-serif;
+}
+.addpopup2 .add_close2 {
+  top: 20px;
+  right: 30px;
+  padding-left: 95%;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+.addpopup2 .add_close2:hover {
+  color: #06D85F;
+}
+.addpopup2 .content {
+  max-height: 30%;
+  overflow: auto;
+}

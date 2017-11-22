@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>signup</title>
+      <style>
+        #bg{
+            background-size: 1600px 800px;
+            background-repeat: no-repeat;
+            background-position: top;
+            background-attachment: fixed;
+        }
+        .form {
+            padding-left: 50%;
+            padding-top: 20%;
+        }
+        .form {
+          position: relative;
+          z-index: 1;
+          background: #FFFFFF;
+          max-width: 300px;
+          margin-left:46%;
+          margin-top:17%;
+          padding: 45px;
+          text-align: center;
+          box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+        }
+        .form input {
+          font-family: "Roboto", sans-serif;
+          outline: 0;
+          background: #f2f2f2;
+          width: 100%;
+          border: 0;
+          margin: 0 0 15px;
+          padding: 15px;
+          box-sizing: border-box;
+          font-size: 14px;
+        }
+        .form button {
+          font-family: "Roboto", sans-serif;
+          text-transform: uppercase;
+          outline: 0;
+          background: #4CAF50;
+          width: 100%;
+          border: 0;
+          padding: 15px;
+          color: #FFFFFF;
+          font-size: 14px;
+          -webkit-transition: all 0.3 ease;
+          transition: all 0.3 ease;
+          cursor: pointer;
+        }
+        .form .message {
+              margin: 15px 0 0;
+              color: #b3b3b3;
+              font-size: 12px;
+            }
+        .form .message a {
+          color: #4CAF50;
+          text-decoration: none;
+        }
+        p{
+            margin-top:-15px;
+        }
+    </style>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript" >
+        $(document).ready(function(){
+            $("#id_username").attr('placeholder', '{{form.username.label}}');
+            $("#id_password1").attr('placeholder', '{{form.password1.label}}');
+            $("#id_password2").attr('placeholder', '{{form.password2.label}}');
+            $('label').hide();
+        });
+    </script>
+</head>
+<body id="bg" style="background-image: url('../static/img/Home.png') ;">
+  <form class="form" method="post">
+    {% csrf_token %}
+    {% for field in form %}
+      <p>
+        {{ field.label_tag }}<br>
+        {{ field }}
+        {% if field.help_text %}
+
+        {% endif %}
+        {% for error in field.errors %}
+          <p style="color: red">{{ error }}</p>
+        {% endfor %}
+      </p>
+    {% endfor %}
+    <button type="submit">Sign up</button>
+    <p class="message">Already registered? <a href="../">Sign In</a></p>
+  </form>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <style>
+        <!--.form{-->
+            <!--background-image: url("home.png");-->
+        <!--}-->
+    </style>
+</head>
+<body background="{{ STATIC_URL }}img/Home.png" no-repeat;>
+
+  <h2>Login</h2>
+  <form method="post" class="form">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Login</button>
+  </form>
+<a href="{% url 'signup' %}">signup</a>
+</body>
+</html>
