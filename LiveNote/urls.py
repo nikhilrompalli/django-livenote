@@ -27,7 +27,7 @@ urlpatterns = [
     url(r'^LiveNote/',include(urls)),
     url(r'^auth/', include(django.contrib.auth.urls)),
     url(r'^signup/$', views.signup, name='signup'),
-    url(r'^$', auth_views.login, {'template_name': 'login.html'}, name='home'),
-    url(r'^logout/$', auth_views.logout, {'template_name': 'logged_out.html'}, name='logout'),
+    url(r'^$', auth_views.LoginView.as_view(template_name='login.html'), name='home'),
+    url(r'^logout/$', auth_views.LogoutView.as_view(template_name='logged_out.html'), name='logout'),
 
 ]+static(settings.STATIC_URL,document_root=settings.STATIC_ROOT)

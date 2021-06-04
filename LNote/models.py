@@ -10,7 +10,7 @@ class noteBook(models.Model):
     title=models.CharField(max_length=128)
     tag=models.CharField(max_length=1000)
     time=models.DateTimeField(auto_now_add=True)
-    user = models.ForeignKey(settings.AUTH_USER_MODEL,default=True)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL,default=True, on_delete=models.CASCADE)
 
     def __unicode__(self):
         return self.title
@@ -33,7 +33,7 @@ class sharedNote(models.Model):
     sharedById = models.IntegerField()
     sharedByName = models.CharField(max_length=128)
     sharedWithId=models.IntegerField()
-    note = models.ForeignKey(note)
+    note = models.ForeignKey(note, on_delete=models.CASCADE)
 
     def __unicode__(self):
         return self.sharedByName
